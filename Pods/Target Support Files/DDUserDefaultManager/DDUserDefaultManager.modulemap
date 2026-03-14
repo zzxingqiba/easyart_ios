@@ -1,0 +1,6 @@
+framework module DDUserDefaultManager {
+  umbrella header "DDUserDefaultManager-umbrella.h"
+
+  export *
+  module * { export * }
+}

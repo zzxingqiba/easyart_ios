@@ -1,0 +1,20 @@
+/* 
+  Localizable.strings
+  ZXKitLogger
+
+  Created by Damon on 2019/6/24.
+  Copyright © 2019 Damon. All rights reserved.
+*/
+"close" = "닫기";
+"back" = "뒤로";
+"File operations" = "파일 작업";
+"share" = "공유";
+"copy" = "복사";
+"move" = "이동";
+"delete" = "삭제";
+"cancel" = "취소";
+"paste here" = "여기에 붙여넣기";
+"move here" = "여기로 이동";
+"FileBrowser" = "파일 브라우저";
+"hash value" = "해시 값";
+

@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  DDLoggerSwift
+
+  Created by Damon on 2019/6/24.
+  Copyright © 2019 Damon. All rights reserved.
+*/
+"Website Speed Test" = "웹사이트 속도 테스트";
+"Start" = "시작";
+"Error" = "오류";
+"Stop" = "중지";
+"Fast" = "빠름";
+"Normal" = "보통";
+"Slow" = "느림";
+"Terrible" = "매우 느림";
+
+

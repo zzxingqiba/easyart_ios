@@ -1,0 +1,6 @@
+framework module DDKitSwift_Netfox {
+  umbrella header "DDKitSwift_Netfox-umbrella.h"
+
+  export *
+  module * { export * }
+}

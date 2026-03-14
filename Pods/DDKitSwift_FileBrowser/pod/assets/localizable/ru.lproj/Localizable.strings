@@ -1,0 +1,20 @@
+/* 
+  Localizable.strings
+  ZXKitLogger
+
+  Created by Damon on 2019/6/24.
+  Copyright © 2019 Damon. All rights reserved.
+*/
+"close" = "закрыть";
+"back" = "назад";
+"File operations" = "Операции с файлами";
+"share" = "поделиться";
+"copy" = "копировать";
+"move" = "переместить";
+"delete" = "удалить";
+"cancel" = "отмена";
+"paste here" = "вставить сюда";
+"move here" = "переместить сюда";
+"FileBrowser" = "Файловый менеджер";
+"hash value" = "хеш-значение";
+

@@ -1,0 +1,6 @@
+framework module DDFileBrowser {
+  umbrella header "DDFileBrowser-umbrella.h"
+
+  export *
+  module * { export * }
+}

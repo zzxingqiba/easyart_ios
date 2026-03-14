@@ -1,0 +1,346 @@
+PODS:
+  - Alamofire (5.11.1)
+  - AppAuth (2.0.0):
+    - AppAuth/Core (= 2.0.0)
+    - AppAuth/ExternalUserAgent (= 2.0.0)
+  - AppAuth/Core (2.0.0)
+  - AppAuth/ExternalUserAgent (2.0.0):
+    - AppAuth/Core
+  - AppCheckCore (11.2.0):
+    - GoogleUtilities/Environment (~> 8.0)
+    - GoogleUtilities/UserDefaults (~> 8.0)
+    - PromisesObjC (~> 2.4)
+  - BSText (1.1.3):
+    - YYImage
+  - Cache (6.0.0)
+  - DDFileBrowser (4.0.3):
+    - DDFileBrowser/core (= 4.0.3)
+  - DDFileBrowser/core (4.0.3):
+    - DDUtils/ui
+    - DDUtils/utils
+    - HDHUD
+  - DDKitFPS (3.0.0):
+    - DDKitFPS/core (= 3.0.0)
+  - DDKitFPS/core (3.0.0)
+  - DDKitSwift (4.0.3):
+    - DDKitSwift/core (= 4.0.3)
+  - DDKitSwift/core (4.0.3):
+    - DDLoggerSwift (~> 5)
+    - DDUtils/ui (~> 5)
+    - DDUtils/utils (~> 5)
+  - DDKitSwift_FileBrowser (4.0.2):
+    - DDFileBrowser (~> 4)
+    - DDKitSwift/core (~> 4)
+  - DDKitSwift_FPS (4.0.1):
+    - DDKitFPS
+    - DDKitSwift/core (~> 4)
+  - DDKitSwift_Netfox (4.0.0):
+    - DDKitSwift/core (~> 4)
+    - netfox (~> 1)
+  - DDKitSwift_Ping (4.1.1):
+    - DDKitSwift/core (~> 4)
+    - DDPingTools (~> 3)
+  - DDKitSwift_UserDefaultManager (4.0.0):
+    - DDKitSwift/core (~> 4)
+    - DDUserDefaultManager (~> 4)
+  - DDLoggerSwift (5.3.3):
+    - DDLoggerSwift/core (= 5.3.3)
+  - DDLoggerSwift/core (5.3.3):
+    - DDUtils/ui (~> 5)
+    - DDUtils/utils (~> 5)
+  - DDPingTools (3.0.1):
+    - DDPingTools/core (= 3.0.1)
+  - DDPingTools/core (3.0.1)
+  - DDUserDefaultManager (4.0.0):
+    - DDUserDefaultManager/core (= 4.0.0)
+  - DDUserDefaultManager/core (4.0.0):
+    - DDUtils/ui
+  - DDUtils (5.0.14):
+    - DDUtils/basic (= 5.0.14)
+  - DDUtils/basic (5.0.14):
+    - DDUtils/core
+    - DDUtils/idfa
+    - DDUtils/permission
+    - DDUtils/ui
+    - DDUtils/utils
+  - DDUtils/core (5.0.14)
+  - DDUtils/idfa (5.0.14):
+    - DDUtils/core
+    - DDUtils/permission
+  - DDUtils/permission (5.0.14):
+    - DDUtils/core
+  - DDUtils/ui (5.0.14):
+    - DDUtils/core
+  - DDUtils/utils (5.0.14):
+    - DDUtils/core
+  - ESTabBarController-swift (2.8.0)
+  - FSPagerView (0.8.3)
+  - GoogleSignIn (9.1.0):
+    - AppAuth (~> 2.0)
+    - AppCheckCore (~> 11.0)
+    - GTMAppAuth (~> 5.0)
+    - GTMSessionFetcher/Core (~> 3.3)
+  - GoogleUtilities/Environment (8.1.0):
+    - GoogleUtilities/Privacy
+  - GoogleUtilities/Logger (8.1.0):
+    - GoogleUtilities/Environment
+    - GoogleUtilities/Privacy
+  - GoogleUtilities/Privacy (8.1.0)
+  - GoogleUtilities/UserDefaults (8.1.0):
+    - GoogleUtilities/Logger
+    - GoogleUtilities/Privacy
+  - GTMAppAuth (5.0.0):
+    - AppAuth/Core (~> 2.0)
+    - GTMSessionFetcher/Core (< 4.0, >= 3.3)
+  - GTMSessionFetcher/Core (3.5.0)
+  - HDHUD (3.1.0):
+    - HDHUD/core (= 3.1.0)
+  - HDHUD/core (3.1.0):
+    - DDUtils/ui (~> 5.0)
+  - Imaginary (5.0.0):
+    - Cache (~> 6.0.0)
+  - IQKeyboardCore (1.0.8)
+  - IQKeyboardManagerSwift (8.0.1):
+    - IQKeyboardManagerSwift/Appearance (= 8.0.1)
+    - IQKeyboardManagerSwift/Core (= 8.0.1)
+    - IQKeyboardManagerSwift/IQKeyboardReturnManager (= 8.0.1)
+    - IQKeyboardManagerSwift/IQKeyboardToolbarManager (= 8.0.1)
+    - IQKeyboardManagerSwift/IQTextView (= 8.0.1)
+    - IQKeyboardManagerSwift/Resign (= 8.0.1)
+  - IQKeyboardManagerSwift/Appearance (8.0.1):
+    - IQKeyboardManagerSwift/Core
+  - IQKeyboardManagerSwift/Core (8.0.1):
+    - IQKeyboardNotification
+    - IQTextInputViewNotification
+  - IQKeyboardManagerSwift/IQKeyboardReturnManager (8.0.1):
+    - IQKeyboardReturnManager
+  - IQKeyboardManagerSwift/IQKeyboardToolbarManager (8.0.1):
+    - IQKeyboardManagerSwift/Core
+    - IQKeyboardToolbarManager
+  - IQKeyboardManagerSwift/IQTextView (8.0.1):
+    - IQTextView
+  - IQKeyboardManagerSwift/Resign (8.0.1):
+    - IQKeyboardManagerSwift/Core
+  - IQKeyboardNotification (1.0.6)
+  - IQKeyboardReturnManager (1.0.6):
+    - IQKeyboardCore
+  - IQKeyboardToolbar (1.1.3):
+    - IQKeyboardToolbar/Core (= 1.1.3)
+  - IQKeyboardToolbar/Core (1.1.3):
+    - IQKeyboardCore
+    - IQKeyboardToolbar/Placeholderable
+  - IQKeyboardToolbar/Placeholderable (1.1.3)
+  - IQKeyboardToolbarManager (1.1.5):
+    - IQKeyboardToolbar
+    - IQTextInputViewNotification
+  - IQTextInputViewNotification (1.0.9):
+    - IQKeyboardCore
+  - IQTextView (1.0.5):
+    - IQKeyboardToolbar/Placeholderable
+  - KakaJSON (1.1.2)
+  - Kingfisher (8.7.0)
+  - Lightbox (2.5.0):
+    - Imaginary (~> 5.0.0)
+  - MJRefresh (3.7.9)
+  - MMKV (2.3.0):
+    - MMKVCore (~> 2.3.0)
+  - MMKVCore (2.3.0)
+  - Moya/Core (15.0.0):
+    - Alamofire (~> 5.0)
+  - Moya/RxSwift (15.0.0):
+    - Moya/Core
+    - RxSwift (~> 6.0)
+  - netfox (1.21.0)
+  - ObjectMapper (4.4.2)
+  - PromisesObjC (2.4.0)
+  - RxCocoa (6.9.0):
+    - RxRelay (= 6.9.0)
+    - RxSwift (= 6.9.0)
+  - RxRelay (6.9.0):
+    - RxSwift (= 6.9.0)
+  - RxSwift (6.9.0)
+  - SnapKit (5.7.1)
+  - StripeApplePay (25.7.1):
+    - StripeCore (= 25.7.1)
+  - StripeCore (25.7.1)
+  - StripePayments (25.7.1):
+    - StripeCore (= 25.7.1)
+    - StripePayments/Stripe3DS2 (= 25.7.1)
+  - StripePayments/Stripe3DS2 (25.7.1):
+    - StripeCore (= 25.7.1)
+  - StripePaymentSheet (25.7.1):
+    - StripeApplePay (= 25.7.1)
+    - StripeCore (= 25.7.1)
+    - StripePayments (= 25.7.1)
+    - StripePaymentsUI (= 25.7.1)
+  - StripePaymentsUI (25.7.1):
+    - StripeCore (= 25.7.1)
+    - StripePayments (= 25.7.1)
+    - StripeUICore (= 25.7.1)
+  - StripeUICore (25.7.1):
+    - StripeCore (= 25.7.1)
+  - SwiftyJSON (5.0.2)
+  - YYImage (1.0.4):
+    - YYImage/Core (= 1.0.4)
+  - YYImage/Core (1.0.4)
+  - ZLPhotoBrowser (4.7.4):
+    - ZLPhotoBrowser/Core (= 4.7.4)
+  - ZLPhotoBrowser/Core (4.7.4)
+
+DEPENDENCIES:
+  - BSText
+  - DDKitSwift (= 4.0.3)
+  - DDKitSwift_FileBrowser (~> 4)
+  - DDKitSwift_FPS (~> 4)
+  - DDKitSwift_Netfox (~> 4)
+  - DDKitSwift_Ping (~> 4)
+  - DDKitSwift_UserDefaultManager (~> 4)
+  - DDUtils (~> 5)
+  - DDUtils/idfa
+  - ESTabBarController-swift
+  - FSPagerView (from `https://github.com/WenchaoD/FSPagerView.git`)
+  - GoogleSignIn
+  - HDHUD (= 3.1.0)
+  - IQKeyboardManagerSwift
+  - KakaJSON
+  - Kingfisher
+  - Lightbox
+  - MJRefresh
+  - MMKV
+  - Moya/RxSwift
+  - ObjectMapper
+  - RxCocoa
+  - RxSwift
+  - SnapKit
+  - StripePaymentSheet
+  - SwiftyJSON
+  - ZLPhotoBrowser
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - AppAuth
+    - AppCheckCore
+    - BSText
+    - Cache
+    - DDFileBrowser
+    - DDKitFPS
+    - DDKitSwift
+    - DDKitSwift_FileBrowser
+    - DDKitSwift_FPS
+    - DDKitSwift_Netfox
+    - DDKitSwift_Ping
+    - DDKitSwift_UserDefaultManager
+    - DDLoggerSwift
+    - DDPingTools
+    - DDUserDefaultManager
+    - DDUtils
+    - ESTabBarController-swift
+    - GoogleSignIn
+    - GoogleUtilities
+    - GTMAppAuth
+    - GTMSessionFetcher
+    - HDHUD
+    - Imaginary
+    - IQKeyboardCore
+    - IQKeyboardManagerSwift
+    - IQKeyboardNotification
+    - IQKeyboardReturnManager
+    - IQKeyboardToolbar
+    - IQKeyboardToolbarManager
+    - IQTextInputViewNotification
+    - IQTextView
+    - KakaJSON
+    - Kingfisher
+    - Lightbox
+    - MJRefresh
+    - MMKV
+    - MMKVCore
+    - Moya
+    - netfox
+    - ObjectMapper
+    - PromisesObjC
+    - RxCocoa
+    - RxRelay
+    - RxSwift
+    - SnapKit
+    - StripeApplePay
+    - StripeCore
+    - StripePayments
+    - StripePaymentSheet
+    - StripePaymentsUI
+    - StripeUICore
+    - SwiftyJSON
+    - YYImage
+    - ZLPhotoBrowser
+
+EXTERNAL SOURCES:
+  FSPagerView:
+    :git: https://github.com/WenchaoD/FSPagerView.git
+
+CHECKOUT OPTIONS:
+  FSPagerView:
+    :commit: f90ab7d2ee6847823708a0a4e11e87c3ee4e6e48
+    :git: https://github.com/WenchaoD/FSPagerView.git
+
+SPEC CHECKSUMS:
+  Alamofire: eec6cd8f73b242b59e34153a606a909eb9864b14
+  AppAuth: 1c1a8afa7e12f2ec3a294d9882dfa5ab7d3cb063
+  AppCheckCore: cc8fd0a3a230ddd401f326489c99990b013f0c4f
+  BSText: fde17ab2d7b591745f73a408de0eeed063009b6a
+  Cache: 4ca7e00363fca5455f26534e5607634c820ffc2d
+  DDFileBrowser: 67264317f7afcdbcd370ae1d5df3bba442647e6a
+  DDKitFPS: 51f4020175f8a45ff3ecbfb7a693fe25b5b714b4
+  DDKitSwift: 7a3d3437e01ed6821ffbd292b449a35f70cb9e15
+  DDKitSwift_FileBrowser: 53159623b79c94b8681456658ef48ac3e723e6ce
+  DDKitSwift_FPS: 583c0fa251aedca3bfb2c34b2b59ab653e752bdb
+  DDKitSwift_Netfox: 93b9128827599149017cf57bca99d848318902a6
+  DDKitSwift_Ping: 334636f98a146c25f54975cf00cab4510a97adb4
+  DDKitSwift_UserDefaultManager: 44236375ebaf8202bb5cfa95dfbc124a227191d3
+  DDLoggerSwift: 3745c227d945abcd1d5771877613cdf3a7a040f4
+  DDPingTools: b08b9d3c0801f59754e43c56a14306ec0c0a33b4
+  DDUserDefaultManager: 549d9499f7168bdecc37d7d7dbd1d8ebd6f5763b
+  DDUtils: 1865663551fe616abec4eeda4c9c4f9635248c8b
+  ESTabBarController-swift: 05593a6ad64700b03c0eb60ff625916370aa4136
+  FSPagerView: c96bcaff1f251d593c91df47f64a3b237568bcd1
+  GoogleSignIn: fcee2257188d5eda57a5e2b6a715550ffff9206d
+  GoogleUtilities: 00c88b9a86066ef77f0da2fab05f65d7768ed8e1
+  GTMAppAuth: 217a876b249c3c585a54fd6f73e6b58c4f5c4238
+  GTMSessionFetcher: 5aea5ba6bd522a239e236100971f10cb71b96ab6
+  HDHUD: 7165690388ae335ad11cc3da935d060f375b0ee6
+  Imaginary: cf5e3a7dd6ab1dcbd47ba8ce5edf2307c4e99eb3
+  IQKeyboardCore: 8652977ec919cf5351aa2977fedd1a6546476fbc
+  IQKeyboardManagerSwift: 835fc9c6e4732398113406d84900ad2e8f141218
+  IQKeyboardNotification: eb4910401f5a0e68f97e71c62f8a0c5b7e9d535c
+  IQKeyboardReturnManager: fcbf51fc68d7536fc1fbcca5231c4e82576b12ac
+  IQKeyboardToolbar: 9fe900f8e7def414be4025af0ca098df764d4fe3
+  IQKeyboardToolbarManager: d449479b5843d4a3fb902d03bf62d6ca031ac20e
+  IQTextInputViewNotification: 3b9fb27a16e7ee8958cc9092cfb07a1a9e1fd559
+  IQTextView: ae13b4922f22e6f027f62c557d9f4f236b19d5c7
+  KakaJSON: cc5ff50a8c1cfbb09413db8496cb709a209e6137
+  Kingfisher: 649489bb8748428fa1db7de1479acb7c78d2469d
+  Lightbox: cc3d5124f024fa8197fd23f913160db1c61a1852
+  MJRefresh: ff9e531227924c84ce459338414550a05d2aea78
+  MMKV: c953dbaac0da392c24b005e763c03ce2638b4ed7
+  MMKVCore: d078dce7d6586a888b2c2ef5343b6242678e3ee8
+  Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
+  netfox: 9d5cc727fe7576c4c7688a2504618a156b7d44b7
+  ObjectMapper: e6e4d91ff7f2861df7aecc536c92d8363f4c9677
+  PromisesObjC: f5707f49cb48b9636751c5b2e7d227e43fba9f47
+  RxCocoa: ac16414696ae706516be3e1ab00fcce5bdc9be8a
+  RxRelay: 6b0c930e5cef57d5fe2032571e5e65b78e3cbdb1
+  RxSwift: 31649ace6aceeb422e16ff71c60804f9c3281ed9
+  SnapKit: d612e99e678a2d3b95bf60b0705ed0a35c03484a
+  StripeApplePay: c847abfd5297a42201e00f2609dd09ae791068b4
+  StripeCore: dcdd533cf80ff202e54558ab465d38551985e523
+  StripePayments: 6b39042c8e945fe38a83ea4db1370216ca6a1e0d
+  StripePaymentSheet: d6670b3b5d728c6d20df08e3c3e0b42b9fcc0796
+  StripePaymentsUI: d3fefb50d7dd7f227a8171c7244b632bbe5f8139
+  StripeUICore: 013c8874f1a4eb7c0ff142c40bf3876b3888ad4b
+  SwiftyJSON: f5b1bf1cd8dd53cd25887ac0eabcfd92301c6a5a
+  YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
+  ZLPhotoBrowser: 165f9afee5d238a2c39b52128a94a4445aae2fdf
+
+PODFILE CHECKSUM: 2aeeb10023a12f399cb956f22b19a12e8758db47
+
+COCOAPODS: 1.16.2

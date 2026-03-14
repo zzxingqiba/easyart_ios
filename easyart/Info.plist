@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>UIDesignRequiresCompatibility</key>
+	<true/>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.885360791935-j0tr303jn2p80vjhqsvf7ocke9gu98te</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string></string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.easyart.app</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>easyart</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>easyart-stripe</string>
+			</array>
+		</dict>
+	</array>
+	<key>GIDClientID</key>
+	<string>885360791935-j0tr303jn2p80vjhqsvf7ocke9gu98te.apps.googleusercontent.com</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>x</string>
+		<string>twittersdk</string>
+		<string>twitter</string>
+		<string>fb</string>
+		<string>facebook</string>
+		<string>google</string>
+	</array>
+</dict>
+</plist>

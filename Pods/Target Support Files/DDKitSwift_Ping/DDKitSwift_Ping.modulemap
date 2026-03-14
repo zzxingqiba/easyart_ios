@@ -1,0 +1,6 @@
+framework module DDKitSwift_Ping {
+  umbrella header "DDKitSwift_Ping-umbrella.h"
+
+  export *
+  module * { export * }
+}

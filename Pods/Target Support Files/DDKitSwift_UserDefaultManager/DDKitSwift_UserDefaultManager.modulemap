@@ -1,0 +1,6 @@
+framework module DDKitSwift_UserDefaultManager {
+  umbrella header "DDKitSwift_UserDefaultManager-umbrella.h"
+
+  export *
+  module * { export * }
+}

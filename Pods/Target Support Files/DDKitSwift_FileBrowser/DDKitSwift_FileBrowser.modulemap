@@ -1,0 +1,6 @@
+framework module DDKitSwift_FileBrowser {
+  umbrella header "DDKitSwift_FileBrowser-umbrella.h"
+
+  export *
+  module * { export * }
+}
