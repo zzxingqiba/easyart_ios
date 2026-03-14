@@ -5,8 +5,16 @@
 //  Created by 喵小呆 on 2026/3/14.
 //
 
-# Xcode
-*.xcworkspace/xcuserdata/
+# Xcode - User-specific files
 *.xcodeproj/xcuserdata/
+*.xcodeproj/*.pbxuser
+*.xcodeproj/*.mode1v3
+*.xcodeproj/*.mode2v3
+*.xcodeproj/*.perspectivev3
+*.xcworkspace/xcuserdata/
 *.xcuserstate
 **/.DS_Store
+
+# Xcode - Build products
+build/
+DerivedData/

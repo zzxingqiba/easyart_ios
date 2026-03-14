@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2417DE652F654BC400C6903D /* MineVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2417DE642F654BBE00C6903D /* MineVC.swift */; };
+		2417DE672F657D9700C6903D /* MineNumberItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2417DE662F657D9400C6903D /* MineNumberItemView.swift */; };
 		50B65504AF694B3494ED5155 /* Pods_easyart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8801E93FA121890F5E67E4 /* Pods_easyart.framework */; };
 		E40193FC2C759C480007310F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E40193FA2C759C480007310F /* Localizable.strings */; };
 		E405F3862E0A4C8E00ABDC50 /* OrderTypeListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E405F3852E0A4C8E00ABDC50 /* OrderTypeListVC.swift */; };
@@ -356,6 +358,8 @@
 
 /* Begin PBXFileReference section */
 		1FB3A3616C864BE30CDD01CE /* Pods-SpeakPal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpeakPal.debug.xcconfig"; path = "Target Support Files/Pods-SpeakPal/Pods-SpeakPal.debug.xcconfig"; sourceTree = "<group>"; };
+		2417DE642F654BBE00C6903D /* MineVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineVC.swift; sourceTree = "<group>"; };
+		2417DE662F657D9400C6903D /* MineNumberItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineNumberItemView.swift; sourceTree = "<group>"; };
 		8A8801E93FA121890F5E67E4 /* Pods_easyart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_easyart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		953FD40F8FBBE5449FE5A0A7 /* Pods-easyart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-easyart.debug.xcconfig"; path = "Target Support Files/Pods-easyart/Pods-easyart.debug.xcconfig"; sourceTree = "<group>"; };
 		990D84DCDC4FB1363ACC238E /* Pods-HiTalk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiTalk.release.xcconfig"; path = "Target Support Files/Pods-HiTalk/Pods-HiTalk.release.xcconfig"; sourceTree = "<group>"; };
@@ -765,6 +769,31 @@
 				8A8801E93FA121890F5E67E4 /* Pods_easyart.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2419DA082F65344B0015EBA7 /* mine */ = {
+			isa = PBXGroup;
+			children = (
+				2417DE642F654BBE00C6903D /* MineVC.swift */,
+				2419DA092F65346C0015EBA7 /* model */,
+				2419DA0A2F6534750015EBA7 /* view */,
+			);
+			path = mine;
+			sourceTree = "<group>";
+		};
+		2419DA092F65346C0015EBA7 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		2419DA0A2F6534750015EBA7 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				2417DE662F657D9400C6903D /* MineNumberItemView.swift */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 		8D9292F3428531364759DD79 /* Pods */ = {
@@ -2061,36 +2090,37 @@
 		E4FEA0582C05C1FC0034908F /* main */ = {
 			isa = PBXGroup;
 			children = (
-				E4416BD72E0A8BCC00513B9B /* orderSend */,
-				E44AEBE82E02C37A0010CE28 /* message */,
-				E40B91F12D707229009DA6C5 /* artistSort */,
+				E4B3C3442CA2BC2D00EFCBF2 /* about */,
+				E4EB50892CCF40BE00C71795 /* active */,
+				E4B3C3002C9C1EBB00EFCBF2 /* address */,
+				E475B63F2D2E59FA00E40D1F /* artistEdit */,
 				E475B67F2D3F88C100E40D1F /* artistEditPreview */,
 				E475B6732D390C4B00E40D1F /* artistEditTips */,
-				E475B63F2D2E59FA00E40D1F /* artistEdit */,
-				E41866E02D0FC08A00BB4826 /* SettleIn */,
-				E4C7BB512CFF012F0062A852 /* followList */,
-				E4E1F9C42CF45C1900A64D94 /* searchFilter */,
-				E4E1F9A82CEF00CB00A64D94 /* search */,
-				E4E1F9942CE6E84100A64D94 /* detail */,
-				E4EB509D2CD9F29100C71795 /* package */,
-				E4EB50892CCF40BE00C71795 /* active */,
-				E4D872D82CBA705700B9422A /* setting */,
-				E4FCBE1C2CAA878100828050 /* orderDetail */,
-				E4FCBE172CAA7AB700828050 /* payResult */,
-				E4B3C3442CA2BC2D00EFCBF2 /* about */,
-				E4B3C33B2CA2A36700EFCBF2 /* QA */,
-				E4B3C3382CA2A18100EFCBF2 /* order */,
-				E4B3C32F2CA2970B00EFCBF2 /* me */,
-				E4B3C3292CA17A1600EFCBF2 /* collectionList */,
+				E40B91F12D707229009DA6C5 /* artistSort */,
 				E4B3C3262CA1778D00EFCBF2 /* authorDetail */,
-				E4B3C31D2CA1678700EFCBF2 /* orgDetail */,
-				E4B3C3082CA115E300EFCBF2 /* search_back */,
-				E4B3C3002C9C1EBB00EFCBF2 /* address */,
+				E4B3C3292CA17A1600EFCBF2 /* collectionList */,
 				E4B3C2E72C9AD79E00EFCBF2 /* confirmOrder */,
-				E4B3C2E12C9AB5A900EFCBF2 /* sectionShow */,
+				E4E1F9942CE6E84100A64D94 /* detail */,
 				E48F7C312C93F05700D286D0 /* emailLogin */,
+				E4C7BB512CFF012F0062A852 /* followList */,
 				E42480402C8EEF4200E53964 /* home */,
 				E4C88A3D2C0D5EB1004ADB7D /* login */,
+				E4B3C32F2CA2970B00EFCBF2 /* me */,
+				E44AEBE82E02C37A0010CE28 /* message */,
+				2419DA082F65344B0015EBA7 /* mine */,
+				E4B3C3382CA2A18100EFCBF2 /* order */,
+				E4FCBE1C2CAA878100828050 /* orderDetail */,
+				E4416BD72E0A8BCC00513B9B /* orderSend */,
+				E4B3C31D2CA1678700EFCBF2 /* orgDetail */,
+				E4EB509D2CD9F29100C71795 /* package */,
+				E4FCBE172CAA7AB700828050 /* payResult */,
+				E4B3C33B2CA2A36700EFCBF2 /* QA */,
+				E4E1F9A82CEF00CB00A64D94 /* search */,
+				E4B3C3082CA115E300EFCBF2 /* search_back */,
+				E4E1F9C42CF45C1900A64D94 /* searchFilter */,
+				E4B3C2E12C9AB5A900EFCBF2 /* sectionShow */,
+				E4D872D82CBA705700B9422A /* setting */,
+				E41866E02D0FC08A00BB4826 /* SettleIn */,
 			);
 			path = main;
 			sourceTree = "<group>";
@@ -2265,9 +2295,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-easyart/Pods-easyart-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-easyart/Pods-easyart-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2416,6 +2450,7 @@
 				E4B3C33D2CA2A38900EFCBF2 /* QAVC.swift in Sources */,
 				E40A5A252C87FB5100131C95 /* DDButton.swift in Sources */,
 				E475B67C2D3DE23E00E40D1F /* ArtistEditRarityNumberPopView.swift in Sources */,
+				2417DE652F654BC400C6903D /* MineVC.swift in Sources */,
 				E4416BE02E0AB4FA00513B9B /* LogisticsModel.swift in Sources */,
 				E4B3C3372CA29B8B00EFCBF2 /* MeSettingModel.swift in Sources */,
 				E4B3C3162CA143C500EFCBF2 /* DDCategoryTabView.swift in Sources */,
@@ -2513,6 +2548,7 @@
 				E4B3C3072C9C237200EFCBF2 /* AddressTableViewCell.swift in Sources */,
 				E4FEA0272C05C1BE0034908F /* UITextField+JGFormatNumber.m in Sources */,
 				E4E1F9E02CF84C7E00A64D94 /* DDRecentSearchTools.swift in Sources */,
+				2417DE672F657D9700C6903D /* MineNumberItemView.swift in Sources */,
 				E40B91F02D706611009DA6C5 /* SettleWarnPopView.swift in Sources */,
 				E4EB508B2CCF40EC00C71795 /* ActiveVC.swift in Sources */,
 				E4EB50A12CD9FD8F00C71795 /* DDPreviewView.swift in Sources */,

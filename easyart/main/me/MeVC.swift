@@ -87,6 +87,7 @@ class MeVC: BaseVC {
             make.height.equalTo(30)
         }
         
+        // 入驻艺术家
         self.mSafeView.addSubview(mArtistButton)
         mArtistButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
@@ -142,6 +143,7 @@ class MeVC: BaseVC {
             make.top.equalTo(mFollowsNumberView)
         }
         
+        // =======
         self.mSafeView.addSubview(mMeMenuTabView)
         mMeMenuTabView.snp.makeConstraints { make in
             make.left.right.equalToSuperview()
