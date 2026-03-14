@@ -9,4 +9,4 @@
 *.xcworkspace/xcuserdata/
 *.xcodeproj/xcuserdata/
 *.xcuserstate
-.DS_Store
+**/.DS_Store
