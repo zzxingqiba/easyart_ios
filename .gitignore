@@ -1,0 +1,12 @@
+//
+//  .gitignore
+//  
+//
+//  Created by 喵小呆 on 2026/3/14.
+//
+
+# Xcode
+*.xcworkspace/xcuserdata/
+*.xcodeproj/xcuserdata/
+*.xcuserstate
+.DS_Store
