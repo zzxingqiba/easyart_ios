@@ -10,6 +10,8 @@
 		2417DE652F654BC400C6903D /* MineVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2417DE642F654BBE00C6903D /* MineVC.swift */; };
 		2417DE672F657D9700C6903D /* MineNumberItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2417DE662F657D9400C6903D /* MineNumberItemView.swift */; };
 		50B65504AF694B3494ED5155 /* Pods_easyart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8801E93FA121890F5E67E4 /* Pods_easyart.framework */; };
+		C569BE5F2F6800200074F36C /* MineMenuTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C569BE5E2F68001D0074F36C /* MineMenuTabView.swift */; };
+		C569BE612F6942080074F36C /* MineMenuTabItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C569BE602F6941EB0074F36C /* MineMenuTabItemView.swift */; };
 		E40193FC2C759C480007310F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E40193FA2C759C480007310F /* Localizable.strings */; };
 		E405F3862E0A4C8E00ABDC50 /* OrderTypeListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E405F3852E0A4C8E00ABDC50 /* OrderTypeListVC.swift */; };
 		E40A5A252C87FB5100131C95 /* DDButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40A5A242C87FB5100131C95 /* DDButton.swift */; };
@@ -365,6 +367,8 @@
 		990D84DCDC4FB1363ACC238E /* Pods-HiTalk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiTalk.release.xcconfig"; path = "Target Support Files/Pods-HiTalk/Pods-HiTalk.release.xcconfig"; sourceTree = "<group>"; };
 		A6397B0C2FF097D29734E345 /* Pods-SpeakPal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpeakPal.release.xcconfig"; path = "Target Support Files/Pods-SpeakPal/Pods-SpeakPal.release.xcconfig"; sourceTree = "<group>"; };
 		B2463FF65F58FA61476F6DB3 /* Pods-easyart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-easyart.release.xcconfig"; path = "Target Support Files/Pods-easyart/Pods-easyart.release.xcconfig"; sourceTree = "<group>"; };
+		C569BE5E2F68001D0074F36C /* MineMenuTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineMenuTabView.swift; sourceTree = "<group>"; };
+		C569BE602F6941EB0074F36C /* MineMenuTabItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineMenuTabItemView.swift; sourceTree = "<group>"; };
 		CF7C0CDB5429D42B9572A92E /* Pods-HiTalk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiTalk.debug.xcconfig"; path = "Target Support Files/Pods-HiTalk/Pods-HiTalk.debug.xcconfig"; sourceTree = "<group>"; };
 		E40193FB2C759C480007310F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E40194032C759D710007310F /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -791,6 +795,8 @@
 		2419DA0A2F6534750015EBA7 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				C569BE602F6941EB0074F36C /* MineMenuTabItemView.swift */,
+				C569BE5E2F68001D0074F36C /* MineMenuTabView.swift */,
 				2417DE662F657D9400C6903D /* MineNumberItemView.swift */,
 			);
 			path = view;
@@ -2418,6 +2424,7 @@
 				E4FEA04A2C05C1BE0034908F /* DDUserRulePopView.swift in Sources */,
 				E4416BE32E0B919C00513B9B /* LogisticsListPopView.swift in Sources */,
 				E4EB50842CCA408D00C71795 /* SearchAuthorTableViewCell.swift in Sources */,
+				C569BE5F2F6800200074F36C /* MineMenuTabView.swift in Sources */,
 				E475B6462D2FA15600E40D1F /* ArtistEditImageListView.swift in Sources */,
 				E475B6412D2E5E9C00E40D1F /* ArtistEditVC.swift in Sources */,
 				E4B3C3462CA2BC5A00EFCBF2 /* AboutVC.swift in Sources */,
@@ -2528,6 +2535,7 @@
 				E44AEBF12E0513530010CE28 /* MessageFollowTableViewCell.swift in Sources */,
 				E42480422C8EEF5B00E53964 /* HomeVC.swift in Sources */,
 				E475B6382D2D1F1300E40D1F /* MeArtworksInfoView.swift in Sources */,
+				C569BE612F6942080074F36C /* MineMenuTabItemView.swift in Sources */,
 				E48F7C352C9424A000D286D0 /* DDSwiperView.swift in Sources */,
 				E4CDF12C2C22B4DC004A23B3 /* GifImageOperation.swift in Sources */,
 				E4FEA0362C05C1BE0034908F /* DDAPIResponse.swift in Sources */,

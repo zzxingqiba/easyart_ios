@@ -108,7 +108,7 @@ class MineVC: BaseVC {
             make.right.equalTo(leftLine.snp.left)
             make.width.equalTo(self.mFollowsNumberView)
             make.top.equalTo(self.mFollowsNumberView)
-         }
+        }
         
         let rightLine = UIView()
         leftLine.backgroundColor = UIColor.dd.color(hexValue: 0xE6E6E6)
@@ -125,6 +125,13 @@ class MineVC: BaseVC {
             make.left.equalTo(rightLine.snp.right)
             make.width.equalTo(self.mFollowsNumberView)
             make.top.equalTo(self.mFollowsNumberView)
+        }
+        
+        self.mSafeView.addSubview(self.mMineMenuTabView)
+        self.mMineMenuTabView.snp.makeConstraints { make in
+            make.left.right.equalToSuperview()
+            make.top.equalTo(self.mFollowsNumberView.snp.bottom).offset(20)
+            make.bottom.equalToSuperview()
         }
     }
     
@@ -225,5 +232,10 @@ class MineVC: BaseVC {
         return view
     }()
 
+    lazy var mMineMenuTabView: MineMenuTabView = {
+        let view = MineMenuTabView()
+        return view
+    }()
+    
     func _bindView() {}
 }
