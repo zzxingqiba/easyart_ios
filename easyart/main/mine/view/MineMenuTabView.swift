@@ -17,8 +17,6 @@ class MineMenuTabView: DDView {
     private var currentIndex: Int = 0
     override func createUI() {
         super.createUI()
-        let tap = UITapGestureRecognizer(target: self, action: #selector(testTap))
-           self.addGestureRecognizer(tap)
         addSubview(indicatorView)
         addSubview(tabCollectionView)
         tabCollectionView.snp.makeConstraints { make in
@@ -30,11 +28,9 @@ class MineMenuTabView: DDView {
             make.top.equalTo(tabCollectionView.snp.bottom)
             make.height.equalTo(4)
             make.width.equalTo(10)
+            make.bottom.equalToSuperview()
             indicatorLeadingConstraint = make.leading.equalToSuperview().constraint // ⭐️ 保存约束引用
         }
-    }
-    @objc func testTap() {
-        print("整个视图被点击了")
     }
     // MARK: UI
 

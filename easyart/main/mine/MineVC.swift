@@ -131,7 +131,6 @@ class MineVC: BaseVC {
         self.mMineMenuTabView.snp.makeConstraints { make in
             make.left.right.equalToSuperview()
             make.top.equalTo(self.mFollowsNumberView.snp.bottom).offset(20)
-            make.bottom.equalToSuperview()
         }
     }
     
