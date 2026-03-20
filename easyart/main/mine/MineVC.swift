@@ -10,6 +10,7 @@ import UIKit
 import ZLPhotoBrowser
 
 class MineVC: BaseVC {
+    var mbottomConstraint: Constraint?
     init() {
         super.init(bottomPadding: 50)
     }
@@ -27,14 +28,12 @@ class MineVC: BaseVC {
     override func createUI() {
         super.createUI()
         self.mSafeView.contentType = .flex
-        
         self.mSafeView.addSubview(self.mImageView)
         self.mImageView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalToSuperview().offset(30)
             make.width.height.equalTo(60)
         }
-        self.mImageView.kf.setImage(with: URL(string: "https://www.gitkraken.com/wp-content/uploads/2024/08/KeifApp@2x.png"))
         
         self.mSafeView.addSubview(self.mEditImageView)
         self.mEditImageView.snp.makeConstraints { make in
@@ -64,8 +63,8 @@ class MineVC: BaseVC {
             make.width.height.equalTo(6)
         }
         
-        self.mSafeView.addSubview(self.mNameTextFeild)
-        self.mNameTextFeild.snp.makeConstraints { make in
+        self.mSafeView.addSubview(self.mNameTextField)
+        self.mNameTextField.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(self.mImageView.snp.bottom).offset(0)
             make.height.equalTo(30)
@@ -75,14 +74,14 @@ class MineVC: BaseVC {
         self.mSafeView.addSubview(self.mBecomeButton)
         self.mBecomeButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(self.mNameTextFeild.snp.bottom).offset(10)
+            make.top.equalTo(self.mNameTextField.snp.bottom).offset(10)
             make.height.equalTo(30)
         }
         
         self.mSafeView.addSubview(self.mLoginButton)
         self.mLoginButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(self.mNameTextFeild.snp.bottom).offset(10)
+            make.top.equalTo(self.mNameTextField.snp.bottom).offset(10)
             make.height.equalTo(30)
         }
         
@@ -127,15 +126,27 @@ class MineVC: BaseVC {
             make.top.equalTo(self.mFollowsNumberView)
         }
         
+        // Tab
         self.mSafeView.addSubview(self.mMineMenuTabView)
         self.mMineMenuTabView.snp.makeConstraints { make in
             make.left.right.equalToSuperview()
             make.top.equalTo(self.mFollowsNumberView.snp.bottom).offset(20)
         }
+        // Collection
+        self.mSafeView.addSubview(self.mCollectionView)
+        self.mCollectionView.snp.makeConstraints { make in
+            make.left.right.equalToSuperview()
+            make.top.equalTo(self.mMineMenuTabView.snp.bottom).offset(20)
+        }
+        // Art or Org
+        self.mSafeView.addSubview(self.mArtorOrgView)
+        self.mArtorOrgView.snp.makeConstraints { make in
+            make.left.right.equalToSuperview()
+            make.top.equalTo(self.mMineMenuTabView.snp.bottom).offset(20)
+        }
     }
     
     // MARK: UI
-    
     lazy var mImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.kf.indicatorType = .activity
@@ -149,7 +160,7 @@ class MineVC: BaseVC {
     
     lazy var mEditImageView: UIImageView = {
         let imageView = UIImageView()
-//        imageView.isHidden = true
+        imageView.isHidden = true
         imageView.image = UIImage(named: "icon-edit-me")
         return imageView
     }()
@@ -168,14 +179,14 @@ class MineVC: BaseVC {
     
     lazy var mMessageRedIcon: UIView = {
         let view = UIView()
-//        view.isHidden = true
+        view.isHidden = true
         view.backgroundColor = .red
         view.layer.cornerRadius = 3
         view.layer.masksToBounds = true
         return view
     }()
     
-    lazy var mNameTextFeild: UITextField = {
+    lazy var mNameTextField: UITextField = {
         let textField = UITextField()
         textField.textAlignment = .center
         textField.placeholder = "Enter nickname".localString
@@ -185,8 +196,8 @@ class MineVC: BaseVC {
         return textField
     }()
     
-    lazy var mBecomeButton: DDButton = {
-        let button = DDButton(imagePosition: .none)
+    lazy var mBecomeButton: DDButtonFixed = {
+        let button = DDButtonFixed(imagePosition: .none)
         button.contentType = .contentFit(padding: UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20), gap: 0)
         button.mTitleLabel.textColor = ThemeColor.black.color()
         button.mTitleLabel.attributedText = NSAttributedString(string: "Join the platform".localString, attributes: [NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue, .underlineColor: ThemeColor.black.color()])
@@ -194,8 +205,8 @@ class MineVC: BaseVC {
         return button
     }()
     
-    lazy var mLoginButton: DDButton = {
-        let button = DDButton(imagePosition: .none)
+    lazy var mLoginButton: DDButtonFixed = {
+        let button = DDButtonFixed(imagePosition: .none)
         button.isHidden = true
         button.contentType = .contentFit(padding: UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20), gap: 0)
         button.mTitleLabel.textColor = ThemeColor.black.color()
@@ -231,10 +242,218 @@ class MineVC: BaseVC {
         return view
     }()
 
-    lazy var mMineMenuTabView: MineMenuTabView = {
-        let view = MineMenuTabView()
+    lazy var mMineMenuTabView: MineMenuTabView = .init()
+    
+    lazy var mCollectionView: MineCollectionView = .init()
+
+    lazy var mArtorOrgView: MineArtorOrgView = {
+        let view = MineArtorOrgView()
+        view.isHidden = true
         return view
     }()
-    
-    func _bindView() {}
+}
+
+extension MineVC {
+    func _bindView() {
+        _ = self.mMineMenuTabView.indexChange.subscribe(onNext: {
+            [weak self] index in
+            guard let self = self else { return }
+            self.mbottomConstraint?.deactivate()
+            self.mCollectionView.isHidden = index == 1
+            self.mArtorOrgView.isHidden = index == 0
+            if index == 0 {
+                self.mCollectionView.loadData()
+            } else {
+                self.mArtorOrgView.reloadData()
+            }
+        })
+        _ = DDUserTools.shared.userInfo.subscribe(onNext: {
+            [weak self] userModel in
+            guard let self = self else { return }
+            print(userModel, "userModel")
+            self.mImageView.kf.setImage(with: URL(string: userModel.face_url))
+            self.mEditImageView.isHidden = !(([2, 3].contains(userModel.role.user_role)) && DDUserTools.shared.userInfo.value.role.status == 1)
+            if DDUserTools.shared.isLogin {
+                self.mLoginButton.isHidden = true
+                self.mLoginButton.snp.updateConstraints { make in
+                    make.height.equalTo(0)
+                }
+                self.mNameTextField.isHidden = false
+                if String.isAvailable(userModel.name) {
+                    self.mNameTextField.text = userModel.name
+                } else {
+                    self.mNameTextField.text = nil
+                }
+                self.mNameTextField.snp.updateConstraints { make in
+                    make.height.equalTo(30)
+                }
+            } else {
+                self.mLoginButton.isHidden = false
+                self.mLoginButton.snp.updateConstraints { make in
+                    make.height.equalTo(30)
+                }
+                
+                self.mNameTextField.snp.updateConstraints { make in
+                    make.height.equalTo(0)
+                }
+                self.mNameTextField.isHidden = true
+            }
+            
+            self.mSaveNumberView.mNumberLabel.text = String.isAvailable(userModel.collect_num) ? userModel.collect_num : "0"
+            self.mSaveNumberView.mRedIcon.isHidden = !userModel.collect_new
+            
+            self.mFollowsNumberView.mNumberLabel.text = "\(userModel.follow_num)"
+//            self.mFollowsNumberView.mRedIcon.isHidden = !userModel.new_follow_msg
+            
+            self.mOrderNumberView.mNumberLabel.text = "\(userModel.order_num + userModel.sellout_num)"
+            self.mOrderNumberView.mRedIcon.isHidden = !userModel.order_new && !userModel.sellout_new
+            
+            self.mMessageRedIcon.isHidden = !userModel.new_sys_msg && !userModel.new_follow_msg
+            
+            if [2, 3].contains(userModel.role.user_role) {
+                self.mBecomeButton.isHidden = true
+                self.mBecomeButton.snp.updateConstraints { make in
+                    make.height.equalTo(0)
+                }
+            } else {
+                self.mBecomeButton.isHidden = !DDUserTools.shared.isLogin
+                self.mBecomeButton.snp.updateConstraints { make in
+                    make.height.equalTo(30)
+                }
+            }
+        })
+        
+        _ = self.mMessageButton.rx.tap.subscribe(onNext: { [weak self] _ in
+            guard let self = self else { return }
+            let vc = MessageListVC()
+            vc.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(vc, animated: true)
+        })
+        
+        _ = self.mSettingButton.rx.tap.subscribe(onNext: { [weak self] _ in
+            guard let self = self else { return }
+            if DDUserTools.shared.isLogin {
+                let vc = SettingVC()
+                vc.hidesBottomBarWhenPushed = true
+                self.navigationController?.pushViewController(vc, animated: true)
+            } else {
+                DDUserTools.shared.login()
+            }
+        })
+        
+        // 跳转入驻平台
+        _ = self.mBecomeButton.rx.tap.subscribe(onNext: { [weak self] _ in
+            guard let self = self else { return }
+            if DDUserTools.shared.isLogin {
+                // self._becomeArtist()
+            } else {
+                DDUserTools.shared.login()
+            }
+        })
+        
+        // 登陆
+        _ = self.mLoginButton.rx.tap.subscribe(onNext: { _ in
+            DDUserTools.shared.login()
+        })
+        
+        _ = self.mSaveNumberView.clickPublish.subscribe(onNext: { [weak self] _ in
+            guard let self = self else { return }
+            let vc = DDCollectionListVC()
+            vc.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(vc, animated: true)
+        })
+        
+        _ = self.mFollowsNumberView.clickPublish.subscribe(onNext: { [weak self] _ in
+            guard let self = self else { return }
+            let vc = DDFollowListVC()
+            vc.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(vc, animated: true)
+        })
+        
+        _ = self.mOrderNumberView.clickPublish.subscribe(onNext: { [weak self] _ in
+            guard let self = self else { return }
+            if DDUserTools.shared.userInfo.value.role.user_role == 1 {
+                let vc = OrderListVC()
+                vc.hidesBottomBarWhenPushed = true
+                self.navigationController?.pushViewController(vc, animated: true)
+            } else {
+                let vc = OrderTypeListVC()
+                vc.hidesBottomBarWhenPushed = true
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        })
+        
+        // 修改头像
+        let avartTap = UITapGestureRecognizer()
+        _ = avartTap.rx.event.subscribe(onNext: { [weak self] _ in
+            guard let self = self else { return }
+            if !DDUserTools.shared.isLogin {
+                DDUserTools.shared.login()
+                return
+            }
+            ZLPhotoConfiguration.default().allowSelectVideo = false
+            ZLPhotoConfiguration.default().maxSelectCount = 1
+            let ps = ZLPhotoPicker()
+            ps.selectImageBlock = { results, _ in
+                // your code
+                if let image = results.first?.image.pngData() {
+                    _ = DDAPI.shared.upload("home/upFace", params: [:], data: image).subscribe(onNext: { response in
+                        let json = JSON(response.data)
+                        let user = DDUserTools.shared.userInfo.value
+                        user.face_url = json["face_url"].stringValue
+                        DDUserTools.shared.userInfo.accept(user)
+                    })
+                }
+            }
+            ps.showPhotoLibrary(sender: self)
+        })
+        self.mImageView.addGestureRecognizer(avartTap)
+        
+        // 昵称
+        _ = self.mNameTextField.rx.controlEvent([.editingDidEndOnExit, .editingDidEnd]).subscribe(onNext: { [weak self] _ in
+            guard let self = self else { return }
+            if !DDUserTools.shared.isLogin {
+                DDUserTools.shared.login()
+                return
+            }
+            // 修改昵称
+            if String.isAvailable(self.mNameTextField.text) {
+                _ = DDAPI.shared.request("home/upUser", data: ["nickName": self.mNameTextField.text!]).subscribe(onSuccess: { _ in
+                    let user = DDUserTools.shared.userInfo.value
+                    user.name = self.mNameTextField.text!
+                    DDUserTools.shared.userInfo.accept(user)
+                })
+            }
+        })
+        
+        _ = self.mArtorOrgView.joinPlatformClick.subscribe(onNext: { [weak self] _ in
+            guard let self = self else { return }
+            if DDUserTools.shared.isLogin {
+                self._becomeArtist()
+            } else {
+                DDUserTools.shared.login()
+            }
+        })
+    }
+    func _becomeArtist() {
+        let userModel = DDUserTools.shared.userInfo.value
+        if (userModel.role.user_role == 1) {
+            let vc = SettleInVC(bottomPadding: 100)
+            vc.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(vc, animated: true)
+        } else {
+            //status: 1正常，2:删除，3:等待基础审核，4:基础审核通过，5:基础审核拒绝 6等待详细审核 7详细审核拒绝  8拉黑  9修改
+            if userModel.role.status == 6 {
+                let vc = SettleInResultVC()
+                vc.status = SettleInResultStatus.process
+                vc.hidesBottomBarWhenPushed = true
+                self.navigationController?.pushViewController(vc, animated: true)
+            } else if userModel.role.status == 7 {
+                let vc = SettleInResultVC()
+                vc.status = SettleInResultStatus.failed
+                vc.hidesBottomBarWhenPushed = true
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
+    }
 }

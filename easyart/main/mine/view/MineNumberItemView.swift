@@ -57,7 +57,7 @@ class MineNumberItemView: DDView {
 
     lazy var mRedIcon: UIView = {
         let view = UIView()
-//        view.isHidden = true
+        view.isHidden = true
         view.backgroundColor = .red
         view.layer.cornerRadius = 3
         return view

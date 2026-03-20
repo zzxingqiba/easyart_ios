@@ -165,8 +165,10 @@
     "ZIP code": "ZIP code",
     "State": "State",
     "Required field": "Required field",
-    "is required": "is required"
+    "is required": "is required",
     
     // +++++++++++++++++++++++++
-    "Join the platform": "Join the platform"
+    "Join the platform": "Join the platform",
+    "您不是平台入驻艺术家": "您不是平台入驻艺术家",
 }
+

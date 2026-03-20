@@ -12,6 +12,13 @@
 		50B65504AF694B3494ED5155 /* Pods_easyart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A8801E93FA121890F5E67E4 /* Pods_easyart.framework */; };
 		C569BE5F2F6800200074F36C /* MineMenuTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C569BE5E2F68001D0074F36C /* MineMenuTabView.swift */; };
 		C569BE612F6942080074F36C /* MineMenuTabItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C569BE602F6941EB0074F36C /* MineMenuTabItemView.swift */; };
+		C569BE632F6A964D0074F36C /* MineArtorOrgView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C569BE622F6A96310074F36C /* MineArtorOrgView.swift */; };
+		C569BE672F6A96B50074F36C /* MineCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C569BE662F6A96AF0074F36C /* MineCollectionView.swift */; };
+		C569BE692F6A9A690074F36C /* MineArtworksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C569BE682F6A9A5D0074F36C /* MineArtworksView.swift */; };
+		C569BE6B2F6A9BD10074F36C /* MineOrgView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C569BE6A2F6A9B8F0074F36C /* MineOrgView.swift */; };
+		C569BE6D2F6BD30C0074F36C /* DDButton+Fixed.swift in Sources */ = {isa = PBXBuildFile; fileRef = C569BE6C2F6BD2DA0074F36C /* DDButton+Fixed.swift */; };
+		C569BE6F2F6D301E0074F36C /* MineArtistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C569BE6E2F6D301E0074F36C /* MineArtistModel.swift */; };
+		C569BE712F6D369C0074F36C /* MineArtistTipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C569BE702F6D36870074F36C /* MineArtistTipView.swift */; };
 		E40193FC2C759C480007310F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E40193FA2C759C480007310F /* Localizable.strings */; };
 		E405F3862E0A4C8E00ABDC50 /* OrderTypeListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E405F3852E0A4C8E00ABDC50 /* OrderTypeListVC.swift */; };
 		E40A5A252C87FB5100131C95 /* DDButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40A5A242C87FB5100131C95 /* DDButton.swift */; };
@@ -369,6 +376,13 @@
 		B2463FF65F58FA61476F6DB3 /* Pods-easyart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-easyart.release.xcconfig"; path = "Target Support Files/Pods-easyart/Pods-easyart.release.xcconfig"; sourceTree = "<group>"; };
 		C569BE5E2F68001D0074F36C /* MineMenuTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineMenuTabView.swift; sourceTree = "<group>"; };
 		C569BE602F6941EB0074F36C /* MineMenuTabItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineMenuTabItemView.swift; sourceTree = "<group>"; };
+		C569BE622F6A96310074F36C /* MineArtorOrgView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineArtorOrgView.swift; sourceTree = "<group>"; };
+		C569BE662F6A96AF0074F36C /* MineCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineCollectionView.swift; sourceTree = "<group>"; };
+		C569BE682F6A9A5D0074F36C /* MineArtworksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineArtworksView.swift; sourceTree = "<group>"; };
+		C569BE6A2F6A9B8F0074F36C /* MineOrgView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineOrgView.swift; sourceTree = "<group>"; };
+		C569BE6C2F6BD2DA0074F36C /* DDButton+Fixed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DDButton+Fixed.swift"; sourceTree = "<group>"; };
+		C569BE6E2F6D301E0074F36C /* MineArtistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MineArtistModel.swift; path = easyart/main/mine/MineArtistModel.swift; sourceTree = SOURCE_ROOT; };
+		C569BE702F6D36870074F36C /* MineArtistTipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineArtistTipView.swift; sourceTree = "<group>"; };
 		CF7C0CDB5429D42B9572A92E /* Pods-HiTalk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiTalk.debug.xcconfig"; path = "Target Support Files/Pods-HiTalk/Pods-HiTalk.debug.xcconfig"; sourceTree = "<group>"; };
 		E40193FB2C759C480007310F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E40194032C759D710007310F /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -788,6 +802,7 @@
 		2419DA092F65346C0015EBA7 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				C569BE6E2F6D301E0074F36C /* MineArtistModel.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -795,6 +810,11 @@
 		2419DA0A2F6534750015EBA7 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				C569BE702F6D36870074F36C /* MineArtistTipView.swift */,
+				C569BE6A2F6A9B8F0074F36C /* MineOrgView.swift */,
+				C569BE682F6A9A5D0074F36C /* MineArtworksView.swift */,
+				C569BE662F6A96AF0074F36C /* MineCollectionView.swift */,
+				C569BE622F6A96310074F36C /* MineArtorOrgView.swift */,
 				C569BE602F6941EB0074F36C /* MineMenuTabItemView.swift */,
 				C569BE5E2F68001D0074F36C /* MineMenuTabView.swift */,
 				2417DE662F657D9400C6903D /* MineNumberItemView.swift */,
@@ -2013,6 +2033,7 @@
 		E4FE9FF92C05C1BE0034908F /* view */ = {
 			isa = PBXGroup;
 			children = (
+				C569BE6C2F6BD2DA0074F36C /* DDButton+Fixed.swift */,
 				E4FEA0002C05C1BE0034908F /* DDIconButton.swift */,
 				E4FEA0012C05C1BE0034908F /* popView */,
 				E4FEA00B2C05C1BE0034908F /* DDTitleView.swift */,
@@ -2341,6 +2362,7 @@
 				E44AEBEE2E041A5C0010CE28 /* HomeGoodsSortTypePopTableViewCell.swift in Sources */,
 				E41866E72D100C5100BB4826 /* SettleInRuleVC.swift in Sources */,
 				E4D872DC2CBA710800B9422A /* SettingVC.swift in Sources */,
+				C569BE672F6A96B50074F36C /* MineCollectionView.swift in Sources */,
 				E48F7C3B2C9575AA00D286D0 /* DetailContractView.swift in Sources */,
 				E4FCBE232CAA8CAE00828050 /* OrderGoodsInfoView.swift in Sources */,
 				E4B3C2EF2C9ADB1800EFCBF2 /* DDGoodsInfoView.swift in Sources */,
@@ -2362,6 +2384,7 @@
 				E4D214E02C918094009F8620 /* HomeNavView.swift in Sources */,
 				E45A651B2E056CEA000CBD40 /* FollowMessageModel.swift in Sources */,
 				E4E1F98E2CE5A8CC00A64D94 /* DDPackageViewModel.swift in Sources */,
+				C569BE712F6D369C0074F36C /* MineArtistTipView.swift in Sources */,
 				E4E1F9C72CF45C9200A64D94 /* DDSearchFilterTableViewCell.swift in Sources */,
 				E4B3C3312CA2972600EFCBF2 /* MeVC.swift in Sources */,
 				E475B6572D38D3B500E40D1F /* ArtistEditMediumVC.swift in Sources */,
@@ -2388,6 +2411,7 @@
 				E4B3C33A2CA2A19D00EFCBF2 /* OrderListVC.swift in Sources */,
 				E4FCBE142CA926A200828050 /* DDAudioPlayerView.swift in Sources */,
 				E4FCBE162CA9614300828050 /* DDOrderRulePopView.swift in Sources */,
+				C569BE632F6A964D0074F36C /* MineArtorOrgView.swift in Sources */,
 				E40B04032C006AEB0057DB10 /* AppDelegate.swift in Sources */,
 				E4FEA02B2C05C1BE0034908F /* DDUserTools.swift in Sources */,
 				E44AEBF32E05136B0010CE28 /* MessageNotificationTableViewCell.swift in Sources */,
@@ -2436,6 +2460,7 @@
 				E44AEBEA2E02C3BC0010CE28 /* MessageListVC.swift in Sources */,
 				E4E1F9DC2CF8055100A64D94 /* DDSearchSizeFilterVC.swift in Sources */,
 				E475B6662D38E88800E40D1F /* ArtistEditMeterialTableViewCell.swift in Sources */,
+				C569BE6B2F6A9BD10074F36C /* MineOrgView.swift in Sources */,
 				E4E1F9D62CF5AD3000A64D94 /* DDSearchPriceFilterVC.swift in Sources */,
 				E4FEA04B2C05C1BE0034908F /* DDTitleView.swift in Sources */,
 				E4EB50982CD34E4900C71795 /* DDAddressCountryTableViewCell.swift in Sources */,
@@ -2468,6 +2493,7 @@
 				E41867002D12D84200BB4826 /* SettleInAuthorModel.swift in Sources */,
 				E4B3C3222CA16BAA00EFCBF2 /* DDOrgDetailCollectionViewCell.swift in Sources */,
 				E4B3C2ED2C9ADAC500EFCBF2 /* DDAddressView.swift in Sources */,
+				C569BE6F2F6D301E0074F36C /* MineArtistModel.swift in Sources */,
 				E4E1F99F2CE6FD1E00A64D94 /* GoodsDetailTaxesView.swift in Sources */,
 				E4FEA0242C05C1BE0034908F /* AddressModel.m in Sources */,
 				E43E35712D7ABAC90071ECC0 /* String+BuyRule.swift in Sources */,
@@ -2590,6 +2616,7 @@
 				E4E1F99B2CE6FA7400A64D94 /* GoodsDetailIntroView.swift in Sources */,
 				E4CDF12B2C22B4DC004A23B3 /* GuidePageView.swift in Sources */,
 				E4B3C30E2CA11B3700EFCBF2 /* SearchGoodsView.swift in Sources */,
+				C569BE692F6A9A690074F36C /* MineArtworksView.swift in Sources */,
 				E4E1F99D2CE6FCA500A64D94 /* GoodsDetailAuthorView.swift in Sources */,
 				E4FCBE272CAA968300828050 /* OrderInfoView.swift in Sources */,
 				E4FEA0252C05C1BE0034908F /* MOFSAddressPickerView.m in Sources */,
@@ -2611,6 +2638,7 @@
 				E4E1F9932CE6E4AA00A64D94 /* DetailVC.swift in Sources */,
 				E4FCBE252CAA8D2100828050 /* OrderStatusView.swift in Sources */,
 				E4B3C31A2CA1525D00EFCBF2 /* SearchOrgTableViewCell.swift in Sources */,
+				C569BE6D2F6BD30C0074F36C /* DDButton+Fixed.swift in Sources */,
 				E4EB508E2CCF428E00C71795 /* ActiveTableViewCell.swift in Sources */,
 				E4EB50902CCF8F1500C71795 /* DDAddressLabelView.swift in Sources */,
 				E4C88A3C2C09AD5D004ADB7D /* DDAudioTools.swift in Sources */,
@@ -2818,7 +2846,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 11;
-				DEVELOPMENT_TEAM = 97345MUAJR;
+				DEVELOPMENT_TEAM = KC2N3US825;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = easyart/Info.plist;
@@ -2841,7 +2869,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.2.4;
-				PRODUCT_BUNDLE_IDENTIFIER = com.easyart.app;
+				PRODUCT_BUNDLE_IDENTIFIER = com.easyartzz.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -2864,7 +2892,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 11;
-				DEVELOPMENT_TEAM = 97345MUAJR;
+				DEVELOPMENT_TEAM = KC2N3US825;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = easyart/Info.plist;
@@ -2887,7 +2915,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.2.4;
-				PRODUCT_BUNDLE_IDENTIFIER = com.easyart.app;
+				PRODUCT_BUNDLE_IDENTIFIER = com.easyartzz.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

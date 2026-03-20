@@ -5,9 +5,10 @@ import UIKit
 // MARK: - 主类
 
 class MineMenuTabView: DDView {
-    let clickPublish = PublishRelay<Int>()
+    let indexChange = PublishRelay<Int>()
     /// 记录指示器约束
     private var indicatorLeadingConstraint: Constraint?
+    private var hasPerformedInitialLayout = false
     /// 多语言标题
     private let tabTitles = [
         "My Collection".localString,
@@ -17,23 +18,34 @@ class MineMenuTabView: DDView {
     private var currentIndex: Int = 0
     override func createUI() {
         super.createUI()
-        addSubview(indicatorView)
+
         addSubview(tabCollectionView)
         tabCollectionView.snp.makeConstraints { make in
             make.top.left.right.equalToSuperview()
             make.height.equalTo(44)
         }
-      
+        addSubview(indicatorView)
         indicatorView.snp.makeConstraints { make in
-            make.top.equalTo(tabCollectionView.snp.bottom)
+            make.bottom.equalTo(tabCollectionView.snp.bottom)
             make.height.equalTo(4)
-            make.width.equalTo(10)
+            make.width.equalTo(30)
             make.bottom.equalToSuperview()
-            indicatorLeadingConstraint = make.leading.equalToSuperview().constraint // ⭐️ 保存约束引用
+            indicatorLeadingConstraint = make.centerX.equalTo(tabCollectionView.snp.left).offset(0).constraint
         }
     }
-    // MARK: UI
 
+    override func layoutSubviews() {
+        super.layoutSubviews()
+
+        // 当collectionView的宽度确定后，更新指示器位置
+        if !hasPerformedInitialLayout && tabCollectionView.bounds.width > 0 {
+            // 使用当前选中的index
+            hasPerformedInitialLayout = true
+            updateIndicator(to: currentIndex, animated: false)
+        }
+    }
+
+    // MARK: UI
     lazy var tabCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -47,15 +59,13 @@ class MineMenuTabView: DDView {
         cv.delegate = self
         cv.dataSource = self
         cv.isScrollEnabled = false
-        cv.backgroundColor = .red
-
         return cv
     }()
 
     lazy var indicatorView: UIView = {
         let view = UIView()
         view.backgroundColor = ThemeColor.black.color()
-        view.layer.borderWidth = 2
+        view.layer.cornerRadius = 2.5
         view.isUserInteractionEnabled = false
         return view
     }()
@@ -63,14 +73,27 @@ class MineMenuTabView: DDView {
 
 extension MineMenuTabView {
     private func updateIndicator(to index: Int, animated: Bool = true) {
+        guard tabCollectionView.bounds.width > 0 else { return }
         let itemWidth = tabCollectionView.bounds.width / CGFloat(tabTitles.count)
-        let targetX = CGFloat(index) * itemWidth
 
-        indicatorLeadingConstraint?.update(offset: targetX)
+        let centerX = CGFloat(index) * itemWidth + itemWidth / 2
+
+        // 指示器左边距 = cell中心点 - 指示器一半宽度
+        indicatorLeadingConstraint?.update(offset: centerX)
 
         if animated {
-            UIView.animate(withDuration: 0.25) {
+            // 弹性动画
+            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.8, options: .curveEaseInOut) {
                 self.layoutIfNeeded()
+            }
+
+            // 添加微小的缩放脉冲
+            UIView.animate(withDuration: 0.2, animations: {
+                self.indicatorView.transform = CGAffineTransform(scaleX: 1.3, y: 1.2)
+            }) { _ in
+                UIView.animate(withDuration: 0.2) {
+                    self.indicatorView.transform = .identity
+                }
             }
         } else {
             layoutIfNeeded()
@@ -95,7 +118,7 @@ extension MineMenuTabView: UICollectionViewDataSource, UICollectionViewDelegateF
         currentIndex = indexPath.row
         updateIndicator(to: indexPath.row)
         collectionView.reloadData()
-        clickPublish.accept(indexPath.row) // 发送点击
+        indexChange.accept(indexPath.row) // 发送点击
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
