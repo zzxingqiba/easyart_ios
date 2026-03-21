@@ -93,11 +93,14 @@ extension ArtistEditMediumVC {
     }
     
     func _loadData() {
+        
         let numberList = DDServerConfigTools.shared.configInfo.value["category_list"].arrayValue
+        
         self.list = numberList.map({ model in
             let model = DDSearchMulFilterModel(id: model["id"].intValue, title: model["title"].stringValue, isSelected: self.editModel.categoryID == model["id"].intValue)
             return model
         })
+        print(list,"=========")
         self.mTableView.reloadData()
     }
 }

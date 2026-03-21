@@ -11,3 +11,9 @@ class MineOrgView:DDView {
         
     }
 }
+
+extension MineOrgView {
+    func loadData() {
+        print("MineOrgView LoadData")
+    }
+}

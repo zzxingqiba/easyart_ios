@@ -37,7 +37,7 @@ class MineArtorOrgView: DDView {
             make.centerX.equalToSuperview()
             make.top.equalTo(emptyLabel.snp.bottom).offset(15)
             make.height.equalTo(40)
-            make.bottom.equalToSuperview()
+//            make.bottom.equalToSuperview()
         }
 
         _bindView()
@@ -93,14 +93,13 @@ extension MineArtorOrgView {
         _ = DDUserTools.shared.userInfo.subscribe(onNext: {
             [weak self] userModel in
             guard let self = self else { return }
-            print(userModel.role.user_role)
             if userModel.role.user_role == 1 {
                 self.emptyLabel.isHidden = false
                 self.emptyButton.isHidden = false
                 self.artWorksView.isHidden = true
                 self.orgView.isHidden = true
-                self.emptyLabel.text = "You're not a platform artist yet".localString
-                self.emptyButton.mTitleLabel.text = "Becoming an artist".localString
+                self.emptyLabel.text = "您不是平台入驻艺术家".localString
+                self.emptyButton.mTitleLabel.text = "Join the platform".localString
             } else if userModel.role.user_role == 2 {
                 if userModel.role.user_role == 2 && userModel.role.status == 1 {
                     self.emptyLabel.isHidden = true
@@ -139,10 +138,15 @@ extension MineArtorOrgView {
                 self.artWorksView.isHidden = true
                 self.orgView.isHidden = false
             }
+            reloadData()
         })
     }
 
     func reloadData() {
-        print("MineArtorOrgView")
+        if !self.artWorksView.isHidden {
+            self.artWorksView.loadData()
+        } else if(self.orgView.isHidden) {
+            self.orgView.loadData()
+        }
     }
 }

@@ -24,6 +24,14 @@ class MineVC: BaseVC {
         super.viewDidLoad()
         self._bindView()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if (DDUserTools.shared.isLogin) {
+            _ = DDUserTools.shared.updateUserInfo(getRoleInfo: true).subscribe(onSuccess: { isUpdate in
+                print("更新成功")
+            })
+        }
+    }
     
     override func createUI() {
         super.createUI()
@@ -270,7 +278,6 @@ extension MineVC {
         _ = DDUserTools.shared.userInfo.subscribe(onNext: {
             [weak self] userModel in
             guard let self = self else { return }
-            print(userModel, "userModel")
             self.mImageView.kf.setImage(with: URL(string: userModel.face_url))
             self.mEditImageView.isHidden = !(([2, 3].contains(userModel.role.user_role)) && DDUserTools.shared.userInfo.value.role.status == 1)
             if DDUserTools.shared.isLogin {
