@@ -77,8 +77,8 @@ class MineCollectionView: DDView {
         return label
     }()
     
-    lazy var mEmptyButton: DDButton = {
-        let button = DDButton(imagePosition: .none)
+    lazy var mEmptyButton: DDButtonFixed = {
+        let button = DDButtonFixed(imagePosition: .none)
         button.contentType = .contentFit(padding: UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10), gap: 0)
         button.mTitleLabel.text = "Browse now".localString
         button.mTitleLabel.font = .systemFont(ofSize: 13)
@@ -95,7 +95,6 @@ extension MineCollectionView {
         _ = DDUserTools.shared.userInfo.subscribe(onNext: {
             [weak self] userModel in
             guard let self = self else { return }
-            print("========")
             loadData()
         })
             

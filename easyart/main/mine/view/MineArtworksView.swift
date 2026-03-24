@@ -17,7 +17,7 @@ class MineArtworksView: DDView {
     private var authorModel = SettleInAuthorModel()
     private var profileModel = SettleInProfileModel()
     
-    private var list = [MeArtistModel?]()
+    private var list = [MineArtistModel?]()
     
     /// 👇 只加这一句
     private var isIntroExpanded = false
@@ -187,7 +187,7 @@ class MineArtworksView: DDView {
         tCollection.backgroundColor = UIColor.clear
         tCollection.delegate = self
         tCollection.dataSource = self
-        tCollection.register(ArtistCollectionViewCell.self, forCellWithReuseIdentifier: "MineArtistCollectionViewCell")
+        tCollection.register(MineArtistCViewCell.self, forCellWithReuseIdentifier: "MineArtistCollectionViewCell")
         return tCollection
     }()
 }
@@ -351,14 +351,14 @@ extension MineArtworksView {
                 guard let self = self else { return }
                 let data = JSON(response.data)
                 let goodsList = (data["goods_list"].arrayObject as? [[String: Any]]) ?? []
-                let list = goodsList.kj.modelArray(MeArtistModel.self)
+                let list = goodsList.kj.modelArray(MineArtistModel.self)
                 self.list = [nil]
                 self.list.append(contentsOf: list)
                 if self.list.count > 1 {
                     self.mArtistTipView.isHidden = true
                     self.mArtistTipView.snp.updateConstraints { make in
                         make.top.equalTo(self.mListTitleLabel.snp.bottom).offset(0)
-                        make.height.lessThanOrEqualTo(1)
+                        make.height.lessThanOrEqualTo(0)
                     }
                 } else {
                     self.mArtistTipView.isHidden = false
@@ -384,7 +384,7 @@ extension MineArtworksView: UICollectionViewDelegate, UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let model = self.list[indexPath.item]
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MineArtistCollectionViewCell", for: indexPath) as! ArtistCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MineArtistCollectionViewCell", for: indexPath) as! MineArtistCViewCell
         cell.updateUI(model: model)
         return cell
     }

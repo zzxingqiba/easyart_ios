@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,6 +19,7 @@
 		C569BE6D2F6BD30C0074F36C /* DDButton+Fixed.swift in Sources */ = {isa = PBXBuildFile; fileRef = C569BE6C2F6BD2DA0074F36C /* DDButton+Fixed.swift */; };
 		C569BE6F2F6D301E0074F36C /* MineArtistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C569BE6E2F6D301E0074F36C /* MineArtistModel.swift */; };
 		C569BE712F6D369C0074F36C /* MineArtistTipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C569BE702F6D36870074F36C /* MineArtistTipView.swift */; };
+		C569BE732F70E2C40074F36C /* MineArtistCViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C569BE722F70E2910074F36C /* MineArtistCViewCell.swift */; };
 		E40193FC2C759C480007310F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E40193FA2C759C480007310F /* Localizable.strings */; };
 		E405F3862E0A4C8E00ABDC50 /* OrderTypeListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E405F3852E0A4C8E00ABDC50 /* OrderTypeListVC.swift */; };
 		E40A5A252C87FB5100131C95 /* DDButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40A5A242C87FB5100131C95 /* DDButton.swift */; };
@@ -383,6 +384,7 @@
 		C569BE6C2F6BD2DA0074F36C /* DDButton+Fixed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DDButton+Fixed.swift"; sourceTree = "<group>"; };
 		C569BE6E2F6D301E0074F36C /* MineArtistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MineArtistModel.swift; path = easyart/main/mine/MineArtistModel.swift; sourceTree = SOURCE_ROOT; };
 		C569BE702F6D36870074F36C /* MineArtistTipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineArtistTipView.swift; sourceTree = "<group>"; };
+		C569BE722F70E2910074F36C /* MineArtistCViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineArtistCViewCell.swift; sourceTree = "<group>"; };
 		CF7C0CDB5429D42B9572A92E /* Pods-HiTalk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HiTalk.debug.xcconfig"; path = "Target Support Files/Pods-HiTalk/Pods-HiTalk.debug.xcconfig"; sourceTree = "<group>"; };
 		E40193FB2C759C480007310F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E40194032C759D710007310F /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -769,6 +771,11 @@
 		E4FEA06F2C085ABD0034908F /* DDConfigTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDConfigTools.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		C51EA6562F723610007960CC /* orgVerification */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = orgVerification; sourceTree = "<group>"; };
+		C569BE742F7139380074F36C /* joinPlatform */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = joinPlatform; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
 		E40B03FC2C006AEB0057DB10 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
@@ -810,6 +817,7 @@
 		2419DA0A2F6534750015EBA7 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				C569BE722F70E2910074F36C /* MineArtistCViewCell.swift */,
 				C569BE702F6D36870074F36C /* MineArtistTipView.swift */,
 				C569BE6A2F6A9B8F0074F36C /* MineOrgView.swift */,
 				C569BE682F6A9A5D0074F36C /* MineArtworksView.swift */,
@@ -2117,6 +2125,8 @@
 		E4FEA0582C05C1FC0034908F /* main */ = {
 			isa = PBXGroup;
 			children = (
+				C51EA6562F723610007960CC /* orgVerification */,
+				C569BE742F7139380074F36C /* joinPlatform */,
 				E4B3C3442CA2BC2D00EFCBF2 /* about */,
 				E4EB50892CCF40BE00C71795 /* active */,
 				E4B3C3002C9C1EBB00EFCBF2 /* address */,
@@ -2168,6 +2178,10 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				C51EA6562F723610007960CC /* orgVerification */,
+				C569BE742F7139380074F36C /* joinPlatform */,
 			);
 			name = easyart;
 			productName = HiTalk;
@@ -2556,6 +2570,7 @@
 				E475B6842D436E9F00E40D1F /* ArtistEditPreviewItemView.swift in Sources */,
 				E4E1F9972CE6E8F900A64D94 /* SKUListView.swift in Sources */,
 				E4B3C31C2CA15D1E00EFCBF2 /* DDCategoryItemView.swift in Sources */,
+				C569BE732F70E2C40074F36C /* MineArtistCViewCell.swift in Sources */,
 				E4C713732C6C7A6B0029D7BF /* DDLoginView.swift in Sources */,
 				E475B6442D2E7E1E00E40D1F /* ArtistEditImageView.swift in Sources */,
 				E44AEBF12E0513530010CE28 /* MessageFollowTableViewCell.swift in Sources */,

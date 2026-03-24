@@ -22,7 +22,6 @@ class MineArtistTipView: DDView {
             make.left.equalToSuperview().offset(30)
             make.right.equalToSuperview().offset(-30)
             make.top.equalTo(mTitleLabel.snp.bottom).offset(6)
-            make.bottom.equalToSuperview()
         }
     }
     

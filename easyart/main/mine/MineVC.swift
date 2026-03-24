@@ -24,10 +24,11 @@ class MineVC: BaseVC {
         super.viewDidLoad()
         self._bindView()
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if (DDUserTools.shared.isLogin) {
-            _ = DDUserTools.shared.updateUserInfo(getRoleInfo: true).subscribe(onSuccess: { isUpdate in
+        if DDUserTools.shared.isLogin {
+            _ = DDUserTools.shared.updateUserInfo(getRoleInfo: true).subscribe(onSuccess: { _ in
                 print("更新成功")
             })
         }
@@ -36,6 +37,7 @@ class MineVC: BaseVC {
     override func createUI() {
         super.createUI()
         self.mSafeView.contentType = .flex
+        
         self.mSafeView.addSubview(self.mImageView)
         self.mImageView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
@@ -71,6 +73,7 @@ class MineVC: BaseVC {
             make.width.height.equalTo(6)
         }
         
+        // 昵称
         self.mSafeView.addSubview(self.mNameTextField)
         self.mNameTextField.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
@@ -155,6 +158,7 @@ class MineVC: BaseVC {
     }
     
     // MARK: UI
+
     lazy var mImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.kf.indicatorType = .activity
@@ -352,7 +356,7 @@ extension MineVC {
         _ = self.mBecomeButton.rx.tap.subscribe(onNext: { [weak self] _ in
             guard let self = self else { return }
             if DDUserTools.shared.isLogin {
-                // self._becomeArtist()
+                self._joinPlatform()
             } else {
                 DDUserTools.shared.login()
             }
@@ -436,20 +440,22 @@ extension MineVC {
         _ = self.mArtorOrgView.joinPlatformClick.subscribe(onNext: { [weak self] _ in
             guard let self = self else { return }
             if DDUserTools.shared.isLogin {
-                self._becomeArtist()
+                self._joinPlatform()
             } else {
                 DDUserTools.shared.login()
             }
         })
     }
-    func _becomeArtist() {
+
+    func _joinPlatform() {
         let userModel = DDUserTools.shared.userInfo.value
-        if (userModel.role.user_role == 1) {
-            let vc = SettleInVC(bottomPadding: 100)
+        if userModel.role.user_role == 1 {
+//            let vc = SettleInVC(bottomPadding: 100)
+            let vc = JoinPlatformVC()
             vc.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(vc, animated: true)
         } else {
-            //status: 1正常，2:删除，3:等待基础审核，4:基础审核通过，5:基础审核拒绝 6等待详细审核 7详细审核拒绝  8拉黑  9修改
+            // status: 1正常，2:删除，3:等待基础审核，4:基础审核通过，5:基础审核拒绝 6等待详细审核 7详细审核拒绝  8拉黑  9修改
             if userModel.role.status == 6 {
                 let vc = SettleInResultVC()
                 vc.status = SettleInResultStatus.process
