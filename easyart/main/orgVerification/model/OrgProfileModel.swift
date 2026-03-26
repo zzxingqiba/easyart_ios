@@ -8,7 +8,7 @@
 import Foundation
 import KakaJSON
 
-class OrgProfileFileModel: Convertible {
+class OrgFileModel: Convertible {
     required init() {}
     var filename: String = ""
     var fileurl: String = ""
@@ -18,14 +18,17 @@ class OrgProfileModel {
     var name: String = ""
     var idNumber: String = ""
     var mobile: String = ""
-    var idFile = OrgProfileFileModel()
-    var otherIDFile = OrgProfileFileModel()
+    var idFile = OrgFileModel()
+    var otherIDFile = OrgFileModel()
     var country: AddressCountryInfo = .init()
     var address: String = ""
     var bankInfo = OrgBankInfo()
 }
 
 extension OrgProfileModel{
+    func isAvailable() -> Bool {
+        return String.isAvailable(name) && String.isAvailable(idNumber) && String.isAvailable(idFile.filename) && String.isAvailable(mobile) && String.isAvailable(country.id) && String.isAvailable(address) && self.bankInfo.isAvailable()
+    }
     func update(model: UserRoleDetail) {
         self.name = model.real_name
         self.idNumber = model.id_number
